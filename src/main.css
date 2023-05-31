@@ -1,0 +1,53 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./css/fonts.css";
+@import "./css/header.css";
+
+body {
+	@apply font-erbaum text-tbf-green font-light;
+}
+
+.container {
+	@apply mx-auto px-4 md:px-6 lg:px-8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply text-tbf-green font-liberator font-light m-0;
+}
+h1 {
+	@apply text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl tracking-wide;
+}
+h2 {
+	@apply text-lg sm:text-xl lg:text-3xl !leading-relaxed;
+}
+h3 {
+	@apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+}
+h4 {
+	@apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+}
+h5 {
+	@apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+}
+h6 {
+	@apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+}
+
+html {
+	@apply font-liberator font-light;
+}
+
+svg {
+	@apply h-auto w-full max-w-full;
+}
+
+a {
+	@apply transition-colors;
+}
