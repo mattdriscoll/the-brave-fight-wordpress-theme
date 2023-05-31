@@ -31,7 +31,7 @@
 	<div id="page">
 		<header id="masthead" class="site-header relative z-50">
 			<div class="flex justify-center px-3">
-				<div class="container flex justify-end py-2">
+				<div class="container flex justify-end lg:py-2">
 					<nav>
 						<?php wp_nav_menu(
 							array(
@@ -46,17 +46,22 @@
 			<div class="flex justify-center px-3 border-b-1 border-t-1 border-dark-green">
 				<div class="container flex">
 					<div class="w-9/12 sm:w-9/12 md:w-5/12 lg:w-3/12 border-r-1 border-dark-green py-2 pr-4">
-						<a href="/">
+						<div class="max-w-[13rem] md:max-w-[16rem] lg:max-w-[18rem] xl:max-w-[initial]">
 							<?php echo the_custom_logo(); ?>
-						</a>
+						</div>
 					</div>
 
 					<div class="w-3/12 sm:w-3/12 md:w-7/12 lg:w-9/12 flex justify-end items-stretch">
-						<div class="hidden md:flex items-center sm:pr-10 md:pr-12 lg:pr-16">
-							<a href="#" class="text-tbf-orange hover:text-tbf-green  ">
-								Schedule A Consultation
-							</a>
-						</div>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'header-nav-cta-menu',
+								'container' => false,
+								'menu_class' => 'header-nav-cta-menu hidden md:flex items-center sm:pr-10 md:pr-12 lg:pr-16',
+							)
+						);
+						?>
+
 						<div class="flex md:border-r-1 md:border-l-1 md:border-dark-green px-3 md:px-6 lg:px-8">
 							<button id="nav-menu-toggle" type="button" class="inline-flex items-center justify-center rounded-md px-2 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-gray-700">
 								<span class="sr-only">Open main menu</span>
@@ -68,18 +73,18 @@
 							</button>
 						</div>
 
-						<div id="nav-menu" class="hidden" role="dialog" aria-modal="true">
+						<div id="nav-menu" role="dialog" aria-modal="true">
 							<!-- Background backdrop, show/hide based on slide-over state. -->
 							<div id="nav-menu-backdrop" class="fixed inset-0 z-10"></div>
-							<div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-tbf-green text-tbf-pastel-gray px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-								<div class="flex items-center justify-between">
-									<a href="#" class="-m-1.5 p-1.5">
-										<span class="sr-only">The Brave Fight</span>
+							<div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-tbf-green text-tbf-pastel-gray px-6 py-16 lg:py-24">
+								<div class="flex items-center justify-center relative">
+									<span class="w-full pr-36 lg:w-[initial]">
+										<span class="sr-only"><?php echo get_bloginfo('name'); ?></span>
 										<?php echo the_custom_logo(); ?>
-									</a>
-									<button id="nav-menu-close" type="button" class="rounded-md px-2.5 text-cream">
+									</span>
+									<button id="nav-menu-close" type="button" class="rounded-md px-2.5 text-cream absolute top-1 right-1 lg:top-2.5 lg:right-2.5 w-12 md:w-14 lg:w-16 flex justify-end">
 										<span class="sr-only">Close menu</span>
-										<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+										<svg class="w-full h-auto" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
 											<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
 										</svg>
 									</button>
@@ -88,7 +93,7 @@
 									array(
 										'theme_location' => 'header-nav-main-menu',
 										'container' => false,
-										'menu_class' => 'header-nav-main-menu mt-6 flow-root'
+										'menu_class' => 'header-nav-main-menu mt-16 flow-root'
 									)
 								);
 								?>

@@ -1,9 +1,31 @@
 .site-header .header-nav-top-menu > .menu-item {
-	@apply text-tbf-green  hover:text-tbf-orange px-3 py-2;
+	@apply font-liberator font-medium uppercase text-sm lg:text-base;
+	@apply text-tbf-green hover:text-tbf-orange;
+	@apply tracking-[0.2em] px-3 py-1 lg:py-2;
 }
 
+.site-header .header-nav-cta-menu > .menu-item {
+	@apply font-liberator font-medium uppercase text-sm lg:text-base;
+	@apply text-tbf-orange hover:text-tbf-green;
+	@apply tracking-[0.2em] px-3 py-2;
+}
+
+.site-header .header-nav-main-menu {
+	@apply flex flex-col flex-nowrap justify-center items-center;
+}
 .site-header .header-nav-main-menu > .menu-item {
-	@apply -m-3 p-3 flex items-center rounded-md text-base font-medium;
+	@apply my-0 p-3 flex items-center rounded-md text-base md:text-lg lg:text-xl xl:text-2xl font-medium;
 	@apply text-tbf-pastel-gray hover:text-tbf-green hover:bg-tbf-pastel-gray;
-	@apply flex;
+	@apply flex justify-center;
+	@apply transition-all opacity-0 translate-y-12;
+}
+
+.site-header #nav-menu {
+	@apply hidden;
+}
+.site-header #nav-menu.toggled {
+	@apply block;
+}
+.site-header #nav-menu.toggled .header-nav-main-menu > .menu-item {
+	@apply translate-y-0 opacity-100;
 }

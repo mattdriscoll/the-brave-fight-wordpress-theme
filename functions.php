@@ -60,6 +60,7 @@ function the_brave_fight_setup()
 	register_nav_menus(
 		array(
 			'header-nav-top-menu' => 'Header Nav Top Menu',
+			'header-nav-cta-menu' => 'Header Nav CTA Menu',
 			'header-nav-main-menu' => 'Header Nav Main Menu',
 			'header-nav-mobile-menu' => 'Header Nav Mobile Menu',
 			'footer-nav-menu' => 'Footer Nav Menu',
