@@ -33,7 +33,28 @@ module.exports = {
 	},
 	plugins: [
 		plugin(({ addBase, addComponents, addUtilities, theme }) => {
-			addUtilities({});
+			addUtilities({
+				".notched-corner-tr": {
+					clipPath:
+						"polygon( 0 0, calc(100% - 1.5rem) 0, 100% calc(0% + 1.5rem), 100% 100%, 0% 100%, 0% 0% )",
+				},
+				".notched-corner-br": {
+					clipPath:
+						"polygon( 0 0, 100% 0, 100% calc(100% - 1.5rem), calc(100% - 1.5rem) 100%, 0% 100%, 0% 0% )",
+				},
+				".notched-corner-tl": {
+					clipPath:
+						"polygon( calc(0% + 1.5rem) 0%, 100% 0, 100% 100%, 0% 100%,  0% calc(0% + 1.5rem) )",
+				},
+				".notched-corner-bl": {
+					clipPath:
+						"polygon( 0 0, 100% 0, 100% 100%, calc(0% + 1.5rem) 100%, 0% calc(100% - 1.5rem), 0% 0% )",
+				},
+				".nothed-corner-all": {
+					clipPath:
+						"polygon( calc(0% + 1.5rem) 0%, calc(100% - 1.5rem) 0, 100% calc(0% + 1.5rem), 100% calc(100% - 1.5rem), calc(100% - 1.5rem) 100%, calc(0% + 1.5rem) 100%, 0% calc(100% - 1.5rem), 0% calc(0% + 1.5rem) )",
+				},
+			});
 		}),
 	],
 };

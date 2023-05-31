@@ -4,6 +4,7 @@
 
 @import "./css/fonts.css";
 @import "./css/header.css";
+@import "./css/footer.css";
 
 body {
 	@apply font-erbaum text-tbf-green font-light;
