@@ -1,0 +1,11 @@
+{
+  "name": "acf/columns",
+  "title": "Columns",
+  "description": "A Column block.",
+  "keywords": ["columns"],
+  "blockVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "columns.php"
+  }
+}

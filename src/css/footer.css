@@ -37,6 +37,6 @@
 .site-footer #menu-footer-legal-nav .tbf-logo-mark a:after {
 	@apply absolute w-16 h-16 md:h-32 right-0 bottom-8 lg:bottom-0;
 	content: "";
-	background-image: url("/wp-content/uploads/2023/05/tbf-log-mark.svg");
+	background-image: url("/wp-content/uploads/2023/06/The-Brave-Fight-Gold-Monogram-38.svg");
 	@apply bg-no-repeat bg-contain bg-right-bottom;
 }

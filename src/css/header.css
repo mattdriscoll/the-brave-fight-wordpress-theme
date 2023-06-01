@@ -17,14 +17,51 @@
 	@apply my-0 p-3 flex items-center rounded-md text-base md:text-lg lg:text-xl xl:text-2xl font-medium;
 	@apply text-tbf-pastel-gray hover:text-tbf-green hover:bg-tbf-pastel-gray;
 	@apply flex justify-center;
-	@apply transition-all opacity-0 translate-y-12;
+	@apply transition-all opacity-0 translate-y-8 ease-in-out;
+}
+.site-header .header-nav-main-menu > .menu-item:nth-child(1) {
+	@apply delay-100;
+}
+.site-header .header-nav-main-menu > .menu-item:nth-child(2) {
+	@apply delay-[150ms];
+}
+.site-header .header-nav-main-menu > .menu-item:nth-child(3) {
+	@apply delay-[190ms];
+}
+.site-header .header-nav-main-menu > .menu-item:nth-child(4) {
+	@apply delay-[225ms];
+}
+.site-header .header-nav-main-menu > .menu-item:nth-child(5) {
+	@apply delay-[255ms];
+}
+.site-header .header-nav-main-menu > .menu-item:nth-child(6) {
+	@apply delay-[280ms];
+}
+.site-header .header-nav-main-menu > .menu-item:nth-child(7) {
+	@apply delay-[300ms];
+}
+.site-header .header-nav-main-menu > .menu-item:nth-child(8) {
+	@apply delay-[315ms];
+}
+.site-header .header-nav-main-menu > .menu-item:nth-child(9) {
+	@apply delay-[325ms];
+}
+.site-header .header-nav-main-menu > .menu-item:nth-child(10) {
+	@apply delay-[330ms];
 }
 
-.site-header #nav-menu {
-	@apply hidden;
+.site-header #nav-menu .nav-menu-body-inner {
+	@apply bg-opacity-0 transition-colors;
 }
-.site-header #nav-menu.toggled {
-	@apply block;
+.site-header #nav-menu .nav-menu-body {
+	@apply translate-x-[100vw];
+}
+.site-header #nav-menu.toggled .nav-menu-body {
+	@apply translate-x-0;
+}
+
+.site-header #nav-menu.toggled .nav-menu-body-inner {
+	@apply bg-opacity-100;
 }
 .site-header #nav-menu.toggled .header-nav-main-menu > .menu-item {
 	@apply translate-y-0 opacity-100;

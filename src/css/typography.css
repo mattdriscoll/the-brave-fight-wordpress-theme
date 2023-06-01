@@ -1,0 +1,67 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply text-tbf-green font-liberator font-light m-0;
+}
+h1 {
+	@apply text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl tracking-wide;
+}
+h2 {
+	@apply text-lg sm:text-xl lg:text-3xl !leading-relaxed;
+}
+h3 {
+	@apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+}
+h4 {
+	@apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+}
+h5 {
+	@apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+}
+h6 {
+	@apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+}
+
+p {
+	@apply text-base leading-relaxed;
+}
+
+html {
+	@apply font-liberator font-light;
+}
+
+svg {
+	@apply h-auto w-full max-w-full;
+}
+
+a {
+	@apply transition-colors;
+}
+
+.btn {
+	@apply inline-block px-7 py-8 text-base text-center uppercase transition-colors leading-[0.2em];
+}
+
+.btn-primary {
+	@apply font-liberator font-normal;
+	@apply text-tbf-orange bg-transparent border-1 border-tbf-orange;
+	@apply hover:text-tbf-white hover:bg-tbf-orange;
+}
+
+.btn-secondary {
+	@apply font-liberator font-normal underline;
+	@apply text-tbf-orange bg-transparent;
+	@apply hover:text-tbf-orange hover:bg-transparent;
+}
+
+li.bullet-highlight {
+	list-style: none;
+}
+li.bullet-highlight:before {
+	@apply text-tbf-orange;
+	font-size: 1.2em;
+	content: "• ";
+}

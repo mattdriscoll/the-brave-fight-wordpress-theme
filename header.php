@@ -28,7 +28,7 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-	<div id="page">
+	<div id="page" class="page">
 		<header id="masthead" class="site-header relative z-50">
 			<div class="flex justify-center px-3">
 				<div class="container flex justify-end lg:py-2">
@@ -74,29 +74,35 @@
 						</div>
 
 						<div id="nav-menu" role="dialog" aria-modal="true">
-							<!-- Background backdrop, show/hide based on slide-over state. -->
-							<div id="nav-menu-backdrop" class="fixed inset-0 z-10"></div>
-							<div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-tbf-green text-tbf-pastel-gray px-6 py-16 lg:py-24">
-								<div class="flex items-center justify-center relative">
-									<span class="w-full pr-36 lg:w-[initial]">
-										<span class="sr-only"><?php echo get_bloginfo('name'); ?></span>
-										<?php echo the_custom_logo(); ?>
-									</span>
-									<button id="nav-menu-close" type="button" class="rounded-md px-2.5 text-cream absolute top-1 right-1 lg:top-2.5 lg:right-2.5 w-12 md:w-14 lg:w-16 flex justify-end">
-										<span class="sr-only">Close menu</span>
-										<svg class="w-full h-auto" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-											<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-										</svg>
-									</button>
+							<?php
+							/**
+							 * <!-- Background backdrop, show/hide based on slide-over state. -->
+							 * <div id="nav-menu-backdrop" class="fixed inset-0 z-10"></div>
+							 */
+							?>
+							<div class="nav-menu-body fixed inset-y-0 right-0 z-10 w-full overflow-y-auto text-tbf-pastel-gray">
+								<div class="nav-menu-body-inner bg-tbf-green px-6 py-16 lg:py-24 w-full h-full">
+									<div class="flex items-center justify-center relative">
+										<span class="w-full pr-36 lg:w-[initial]">
+											<span class="sr-only"><?php echo get_bloginfo('name'); ?></span>
+											<?php echo the_custom_logo(); ?>
+										</span>
+										<button id="nav-menu-close" type="button" class="rounded-md px-2.5 text-cream absolute top-1 right-1 lg:top-2.5 lg:right-2.5 w-12 md:w-14 lg:w-16 flex justify-end">
+											<span class="sr-only">Close menu</span>
+											<svg class="w-full h-auto" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+											</svg>
+										</button>
+									</div>
+									<?php wp_nav_menu(
+										array(
+											'theme_location' => 'header-nav-main-menu',
+											'container' => false,
+											'menu_class' => 'header-nav-main-menu mt-16 flow-root'
+										)
+									);
+									?>
 								</div>
-								<?php wp_nav_menu(
-									array(
-										'theme_location' => 'header-nav-main-menu',
-										'container' => false,
-										'menu_class' => 'header-nav-main-menu mt-16 flow-root'
-									)
-								);
-								?>
 							</div>
 						</div>
 					</div>

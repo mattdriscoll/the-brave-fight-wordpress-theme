@@ -173,4 +173,25 @@ add_action('init', 'register_acf_blocks', 5);
 function register_acf_blocks()
 {
 	register_block_type(__DIR__ . '/template-parts/blocks/hero');
+	register_block_type(__DIR__ . '/template-parts/blocks/columns');
+}
+
+/**
+ * Limit the blocks that are allowed on a page:
+ */
+add_filter('allowed_block_types', 'theme_allowed_block_types', 10, 2);
+
+function theme_allowed_block_types($allowed_blocks, $post)
+{
+
+	if ($post->post_type === 'page') {
+		$allowed_blocks = array(
+			'acf/hero',
+			'acf/columns',
+			// 'core/columns',
+			'core/paragraph',
+		);
+
+		return $allowed_blocks;
+	}
 }
