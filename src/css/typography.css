@@ -4,10 +4,10 @@ h3,
 h4,
 h5,
 h6 {
-	@apply text-tbf-green font-liberator font-light m-0;
+	@apply font-liberator font-light m-0;
 }
 h1 {
-	@apply text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl tracking-wide;
+	@apply text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl tracking-tbf;
 }
 h2 {
 	@apply text-lg sm:text-xl lg:text-3xl !leading-relaxed;
@@ -42,19 +42,58 @@ a {
 }
 
 .btn {
-	@apply inline-block px-7 py-8 text-base text-center uppercase transition-colors leading-[0.2em];
+	@apply inline-block px-5 lg:px-6 xl:px-7 py-4 text-base text-center uppercase transition-colors tracking-tbf;
 }
 
 .btn-primary {
 	@apply font-liberator font-normal;
 	@apply text-tbf-orange bg-transparent border-1 border-tbf-orange;
 	@apply hover:text-tbf-white hover:bg-tbf-orange;
+
+	&.btn-orange {
+		@apply text-tbf-orange bg-transparent border-1 border-tbf-orange;
+		@apply hover:text-tbf-white hover:bg-tbf-orange;
+	}
+
+	&.btn-white {
+		@apply text-tbf-white bg-transparent border-1 border-tbf-white;
+		@apply hover:text-tbf-green hover:bg-tbf-white;
+	}
 }
 
 .btn-secondary {
-	@apply font-liberator font-normal underline;
+	@apply font-liberator font-normal;
 	@apply text-tbf-orange bg-transparent;
 	@apply hover:text-tbf-orange hover:bg-transparent;
+	/* @apply underline; */
+	@apply relative;
+
+	&:after {
+		@apply absolute h-px border-1;
+		@apply left-5 lg:left-6 xl:left-7;
+		@apply right-5 lg:right-6 xl:right-7;
+		@apply bottom-4;
+		@apply border-tbf-orange;
+		content: "";
+	}
+
+	&.btn-orange {
+		@apply text-tbf-orange bg-transparent;
+		@apply hover:text-tbf-orange hover:bg-transparent;
+
+		&:after {
+			@apply border-tbf-orange;
+		}
+	}
+
+	&.btn-white {
+		@apply text-tbf-white bg-transparent;
+		@apply hover:text-tbf-white hover:bg-transparent;
+
+		&:after {
+			@apply border-tbf-white;
+		}
+	}
 }
 
 li.bullet-highlight {

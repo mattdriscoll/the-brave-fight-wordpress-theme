@@ -1,0 +1,35 @@
+section.testimonials {
+	.splide__pagination {
+		@apply px-6 lg:px-0;
+
+		li {
+			@apply font-liberator font-semibold text-sm leading-[1.4] uppercase relative mr-4 last:mr-0 lg:mr-0 mb-0 lg:mb-4;
+			font-variant-numeric: tabular-nums;
+
+			&:after {
+				@apply lg:absolute lg:block lg:-bottom-2 lg:w-4 lg:h-px lg:bg-tbf-khaki;
+				content: "";
+			}
+
+			&:last-child {
+				@apply mb-0;
+
+				&:after {
+					@apply hidden w-0 h-0;
+				}
+			}
+		}
+
+		button.splide__pagination__page {
+			@apply text-tbf-khaki transition-colors tracking-tbf;
+
+			&.is-active {
+				@apply text-tbf-green;
+			}
+		}
+	}
+
+	.testimonial-item > p {
+		@apply text-base leading-[2.1];
+	}
+}

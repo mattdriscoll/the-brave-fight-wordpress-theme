@@ -6,7 +6,7 @@ $body = $hero_content['body'];
 $background_image = $hero_content['background_image'];
 ?>
 
-<div class="hero block-hero">
+<section class="hero block-hero">
   <div class="container mx-auto relative">
     <div class="grid grid-cols-1 grid-rows-1 items-center py-16 lg:pt-20 lg:pb-10 xl:pt-28 xl:pb-16">
 
@@ -16,4 +16,4 @@ $background_image = $hero_content['background_image'];
 
     </div>
   </div>
-</div>
+</section>

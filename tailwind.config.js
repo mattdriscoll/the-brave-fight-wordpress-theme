@@ -10,6 +10,7 @@ module.exports = {
 				"tbf-white": "#F5F5F5",
 				"tbf-seashell": "#FAF6F0",
 				"tbf-pastel-gray": "#D9CEBE",
+				"tbf-khaki": "#BFB39F",
 				"tbf-light-taupe": "#A68E69",
 				"tbf-green": "#2B3B33",
 				"tbf-orange": "#F1623D",
@@ -28,6 +29,9 @@ module.exports = {
 			},
 			borderWidth: {
 				1: "1px",
+			},
+			letterSpacing: {
+				tbf: "0.2em",
 			},
 		},
 	},

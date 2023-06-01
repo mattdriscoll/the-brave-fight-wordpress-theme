@@ -18,15 +18,15 @@ if ($design) {
 $possible_bg_classes = 'bg-tbf-pastel-gray';
 ?>
 
-<div class="columns block-columns">
+<section class="columns block-columns">
   <div class="container mx-auto relative">
 
     <div class=" relative overflow-hidden <?php echo 'bg-tbf-' . $background_color; ?> <?php echo !is_null($notch_corners) && $notch_corners == 'all' ? 'nothed-corner-all' : ''; ?>">
       <?php if (isset($background_image) && !is_null($background_image)) : ?>
-        <div class="absolute top-0 bottom-0 right-0 w-full lg:w-6/12 opacity-10 bg-cover bg-no-repeat bg-right" style="background-image: url('<?php echo wp_get_attachment_url($background_image); ?>');"></div>
+        <div class="absolute top-0 bottom-0 right-0 w-full lg:w-6/12 opacity-10 bg-cover bg-no-repeat bg-right z-0" style="background-image: url('<?php echo wp_get_attachment_url($background_image); ?>');"></div>
       <?php endif; ?>
 
-      <div class="flex flex-col lg:flex-row gap-12 lg:gap-32 py-10 lg:pt-20 lg:pb-16 xl:pt-16 xl:pb-20 px-12 lg:px-10 ">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-32 py-10 lg:pt-20 lg:pb-16 xl:pt-16 xl:pb-20 px-12 lg:px-10 relative z-10">
 
         <?php if (isset($columns) && is_array($columns)) : ?>
           <?php
@@ -84,7 +84,6 @@ $possible_bg_classes = 'bg-tbf-pastel-gray';
                       [data-block-id="<?php echo $random_block_id; ?>"] p {
                         font-size: 1.875rem;
                         line-height: 1.5;
-                        ;
                       }
                     </style>
                   <?php endif; ?>
@@ -102,10 +101,10 @@ $possible_bg_classes = 'bg-tbf-pastel-gray';
                       $text = $list_item['list_text'];
                     ?>
                       <li class="flex flex-row items-center py-6 lg:py-8 border-b-1 border-b-tbf-orange last:border-b-0 first:pt-0 last:pb-0">
-                        <div class="mr-12 lg:mr-14">
+                        <div class="w-2/12 md:w-3/12 lg:w-2/12 mr-12 lg:mr-14">
                           <?php echo wp_get_attachment_image($icon, 'full', false, array('class' => 'w-24 h-24 object-contain object-center ')); ?>
                         </div>
-                        <h3 class="font-liberator text-base font-semibold tracking-[0.2em]" style='line-break: loose;'>
+                        <h3 class="w-10/12 md:w-7/12 lg:w-10/12 font-liberator text-base font-semibold tracking-tbf" style='line-break: loose;'>
                           <?php echo $text; ?>
                         </h3>
                       </li>
@@ -119,7 +118,7 @@ $possible_bg_classes = 'bg-tbf-pastel-gray';
                   $buttons = $content_block['button'];
                 ?>
                   <?php if (isset($buttons) && is_array($buttons)) : ?>
-                    <ul class="button-group flex flex-row mt-10">
+                    <ul class="button-group flex flex-col xl:flex-row items-center mt-10 gap-6 lg:gap-2">
                       <?php foreach ($buttons as $button) :
                         $link = $button['link'];
                         $style = $button['style'] ?: 'primary';
@@ -146,7 +145,7 @@ $possible_bg_classes = 'bg-tbf-pastel-gray';
                   <?php if (isset($list_items) && !is_null($list_items)) : ?>
                     <ul class="bullet-list columns-2">
                       <?php foreach ($list_items as $list_item) : ?>
-                        <li class="list-item bullet-highlight mb-2">
+                        <li class="list-item bullet-highlight font-normal mb-2">
                           <?php echo $list_item['text']; ?>
                         </li>
                       <?php endforeach; ?>
@@ -181,4 +180,4 @@ $possible_bg_classes = 'bg-tbf-pastel-gray';
     </div>
 
   </div>
-</div>
+</section>

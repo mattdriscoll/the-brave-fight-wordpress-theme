@@ -1,0 +1,11 @@
+{
+  "name": "acf/testimonials",
+  "title": "Testimonials",
+  "description": "A Testimonials Slider block.",
+  "keywords": ["testimonials", "slider"],
+  "blockVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "testimonials.php"
+  }
+}

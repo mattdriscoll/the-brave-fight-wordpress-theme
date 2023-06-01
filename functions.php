@@ -119,9 +119,11 @@ function the_brave_fight_scripts()
 
 	wp_enqueue_script('the-brave-fight-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
-	}
+	/**
+	 * Add 3rd party CDN scripts
+	 */
+	wp_register_script('splide-script', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', null, null, true);
+	wp_register_style('splide-styles', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide-core.min.css');
 }
 add_action('wp_enqueue_scripts', 'the_brave_fight_scripts');
 
@@ -174,6 +176,8 @@ function register_acf_blocks()
 {
 	register_block_type(__DIR__ . '/template-parts/blocks/hero');
 	register_block_type(__DIR__ . '/template-parts/blocks/columns');
+	register_block_type(__DIR__ . '/template-parts/blocks/testimonials');
+	register_block_type(__DIR__ . '/template-parts/blocks/cta');
 }
 
 /**
@@ -188,6 +192,8 @@ function theme_allowed_block_types($allowed_blocks, $post)
 		$allowed_blocks = array(
 			'acf/hero',
 			'acf/columns',
+			'acf/testimonials',
+			'acf/cta',
 			// 'core/columns',
 			'core/paragraph',
 		);

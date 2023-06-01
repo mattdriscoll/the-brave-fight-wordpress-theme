@@ -1,0 +1,11 @@
+{
+  "name": "acf/cta",
+  "title": "CTA",
+  "description": "A CTA Slider block.",
+  "keywords": ["cta"],
+  "blockVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "cta.php"
+  }
+}
