@@ -169,6 +169,15 @@ if (defined('JETPACK__VERSION')) {
 }
 
 /**
+ * 815dev Head Branding
+ */
+function asci_branding()
+{
+	require get_template_directory() . '/inc/815dev_asci.php';
+}
+add_action('wp_head', 'asci_branding', 1);
+
+/**
  * Load ACF Blocks
  */
 add_action('init', 'register_acf_blocks', 5);
@@ -178,6 +187,7 @@ function register_acf_blocks()
 	register_block_type(__DIR__ . '/template-parts/blocks/columns');
 	register_block_type(__DIR__ . '/template-parts/blocks/testimonials');
 	register_block_type(__DIR__ . '/template-parts/blocks/cta');
+	register_block_type(__DIR__ . '/template-parts/blocks/side-anchored-image');
 }
 
 /**
@@ -194,6 +204,7 @@ function theme_allowed_block_types($allowed_blocks, $post)
 			'acf/columns',
 			'acf/testimonials',
 			'acf/cta',
+			'acf/side-anchored-image',
 			// 'core/columns',
 			'core/paragraph',
 		);

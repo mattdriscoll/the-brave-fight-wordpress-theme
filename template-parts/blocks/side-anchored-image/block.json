@@ -1,0 +1,11 @@
+{
+  "name": "acf/side-anchored-image",
+  "title": "Side-Anchored Image",
+  "description": "An Image that is anchored to the side of the screen.",
+  "keywords": ["image", "anchor"],
+  "blockVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "side-anchored-image.php"
+  }
+}

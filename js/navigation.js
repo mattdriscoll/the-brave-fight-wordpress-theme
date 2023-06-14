@@ -28,12 +28,12 @@
 		return;
 	}
 
-	if (!menu.classList.contains("nav-menu")) {
+	if (menu && !menu.classList.contains("nav-menu")) {
 		menu.classList.add("nav-menu");
 	}
 
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
-	menuOpenButton.addEventListener("click", function () {
+	menuOpenButton?.addEventListener("click", function () {
 		menu.classList.toggle("toggled");
 		if (menuOpenButton.getAttribute("aria-expanded") === "true") {
 			menuOpenButton.setAttribute("aria-expanded", "false");
@@ -42,7 +42,7 @@
 		}
 	});
 
-	menuCloseButton.addEventListener("click", function () {
+	menuCloseButton?.addEventListener("click", function () {
 		menu.classList.remove("toggled");
 		menuOpenButton.setAttribute("aria-expanded", "false");
 	});
@@ -58,22 +58,26 @@
 	});
 
 	// Get all the link elements within the menu.
-	const links = menu.getElementsByTagName("a");
+	const links = menu?.getElementsByTagName("a");
 
 	// Get all the link elements with children within the menu.
-	const linksWithChildren = menu.querySelectorAll(
+	const linksWithChildren = menu?.querySelectorAll(
 		".menu-item-has-children > a, .page_item_has_children > a"
 	);
 
 	// Toggle focus each time a menu link is focused or blurred.
-	for (const link of links) {
-		link.addEventListener("focus", toggleFocus, true);
-		link.addEventListener("blur", toggleFocus, true);
+	if (!!links && Array.isArray(links)) {
+		for (const link of links) {
+			link.addEventListener("focus", toggleFocus, true);
+			link.addEventListener("blur", toggleFocus, true);
+		}
 	}
 
 	// Toggle focus each time a menu link with children receive a touch event.
-	for (const link of linksWithChildren) {
-		link.addEventListener("touchstart", toggleFocus, false);
+	if (!!linksWithChildren && Array.isArray(linksWithChildren)) {
+		for (const link of linksWithChildren) {
+			link.addEventListener("touchstart", toggleFocus, false);
+		}
 	}
 
 	/**
